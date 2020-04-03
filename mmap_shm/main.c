@@ -9,7 +9,9 @@
 #include <sys/wait.h>
 #include <fcntl.h>
 
-#define MPATH "/testmem" /* name of file inside your filesystem */
+/*  !!!!!!!!!!!!!!!!  */
+#define MPATH ""     /* <------ add a name in the format /segmentname */
+#define CHILD_BIN "" /* <------ add name of your child process binary */
 #define MEM_SIZE 1024
 #define DATA_OFFSET 5
 
@@ -44,7 +46,7 @@ int main(){
                 printf("Child process wrote %d at offset %u\n", data[DATA_OFFSET], DATA_OFFSET);
         }
         else{
-                execl("./shmtest","","",(char *)0);
+                execl(CHILD_BIN, "", "", (char *)0);
         }
         
         munmap((caddr_t) data, MEM_SIZE);

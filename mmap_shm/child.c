@@ -8,7 +8,8 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-#define MPATH "/testmem" /* name of file inside your filesystem */
+/* !!!!!!!!!!!!!!! */
+#define MPATH "" /* <---- add name in format /segmentname (same as parent of course) */
 #define MEM_SIZE 1024
 #define DATA_OFFSET 5
 
